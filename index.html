@@ -1,75 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            text-align: center;
-            background: #35AF5A;
-            color: white;
-            padding: 30px 10px;
-        }
-        header img {
-            width: 100px;
-            height: auto;
-            border-radius: 10%;
-        }
-        header h1 {
-            margin-top: 10px;
-            font-size: 2rem;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #222;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy / Política de Privacidad</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      background: #35AF5A;
+      color: white;
+      padding: 30px 10px;
+    }
+    header img {
+      width: 100px;
+      height: auto;
+      border-radius: 10%;
+    }
+    header h1 {
+      margin-top: 10px;
+      font-size: 2rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .lang-content {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="resources/AppIcon.png" alt="App logo">
-        <h1>Privacy Policy</h1>
-    </header>
-    
-    <div class="container">
-        <p>This Privacy Policy describes how we collect, use, and protect the personal information of users who use our application.</p>
+  <header>
+    <img src="resources/AppIcon.png" alt="App logo" />
+    <h1 id="main-title">Privacy Policy</h1>
+  </header>
 
-        <h2>Information We Collect</h2>
-        <p>We may collect personal data such as name, email address, and other information necessary for the proper functioning of the application.</p>
-
-        <h2>Use of Information</h2>
-        <p>The information is used to provide better service, improve the user experience, and comply with legal requirements.</p>
-
-        <h2>Data Protection</h2>
-        <p>We implement appropriate security measures to protect the personal data of our users.</p>
-
-        <h2>Contact</h2>
-        <p>If you have any questions about this policy, you can contact us at: <a href="mailto:soporte@qrreader.com">soporte@qrreader.com</a></p>
-
-        <p><strong>Last Updated:</strong> July 2025</p>
+  <div class="container">
+    <!-- English content -->
+    <div id="en" class="lang-content">
+      <p>This Privacy Policy describes how we collect, use, and protect the personal information of users who use our application.</p>
+      <h2>Information We Collect</h2>
+      <p>We may collect personal data such as name, email address, and other information necessary for the proper functioning of the application.</p>
+      <h2>Use of Information</h2>
+      <p>The information is used to provide better service, improve the user experience, and comply with legal requirements.</p>
+      <h2>Data Protection</h2>
+      <p>We implement appropriate security measures to protect the personal data of our users.</p>
+      <h2>Contact</h2>
+      <p>If you have any questions about this policy, you can contact us at: <a href="mailto:soporte@qrreader.com">soporte@qrreader.com</a></p>
+      <p><strong>Last Updated:</strong> July 2025</p>
     </div>
+
+    <!-- Spanish content -->
+    <div id="es" class="lang-content">
+      <p>Esta Política de Privacidad describe cómo recopilamos, usamos y protegemos la información personal de los usuarios que utilizan nuestra aplicación.</p>
+      <h2>Información que recopilamos</h2>
+      <p>Podemos recopilar datos personales como nombre, correo electrónico y otra información necesaria para el funcionamiento de la aplicación.</p>
+      <h2>Uso de la información</h2>
+      <p>La información se utiliza para brindar un mejor servicio, mejorar la experiencia del usuario y cumplir con requisitos legales.</p>
+      <h2>Protección de datos</h2>
+      <p>Implementamos medidas de seguridad adecuadas para proteger los datos personales de nuestros usuarios.</p>
+      <h2>Contacto</h2>
+      <p>Si tienes preguntas sobre esta política, puedes contactarnos en: <a href="mailto:soporte@qrreader.com">soporte@qrreader.com</a></p>
+      <p><strong>Última actualización:</strong> Julio 2025</p>
+    </div>
+  </div>
+
+  <script>
+    // Detect browser language
+    const userLang = navigator.language || navigator.userLanguage;
+    const isSpanish = userLang.startsWith('es');
+    
+    // Show the corresponding content
+    document.getElementById(isSpanish ? 'es' : 'en').classList.add('active');
+    document.getElementById('main-title').innerText = isSpanish ? 'Política de Privacidad' : 'Privacy Policy';
+  </script>
 </body>
 </html>
